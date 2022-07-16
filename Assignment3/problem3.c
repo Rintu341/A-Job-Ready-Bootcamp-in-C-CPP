@@ -5,6 +5,6 @@ int main(){
     int num;
     printf("Enter a number : ");
     scanf("%d",&num);
-    (num%5)?printf("Number is not divisible by 5"):printf("Number is divisible by 5");
+    (num%2)?printf("Number is odd"):printf("Number is even");
     return 0;
 }
