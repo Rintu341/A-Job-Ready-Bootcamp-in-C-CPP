@@ -1,19 +1,24 @@
+// Write a program in C to count the digits of a given number using recursion
 #include <stdio.h>
 #include <conio.h>
 
-int sumDigit(int n,int p);
+int countDigit(int n);
 int main(){
     int k;
     printf("Enter a number: ");
     scanf("%d",&k);
-    int couuntdigit;
-    int p;
-    couuntdigit=sumDigit(k,p);
-    printf("sum of %d even natural is %d",k,couuntdigit);
+    int countdigit;
+    
+    countdigit=countDigit(k);
+    printf("no of digit in given number  %d",countdigit);
     return 0;
 }
-int sumDigit(int n,int p){
-    if(n>=1)
-    return sumDigit(n/10,++p);
-    return p;
+int countDigit(int n){
+    if(n==0)
+        return 0;
+    else{
+        int p=1;
+        return p+countDigit(n/10);
+    }
+
 }

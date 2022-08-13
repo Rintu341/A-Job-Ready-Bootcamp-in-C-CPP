@@ -12,17 +12,15 @@ int main(){
 }
 void sorting(int b[]){
     int temp;
-    for(int i=0;i<=9;i++){
-        for (int j = 0; j <=9; j++)
-        {
-            if (b[i]<=b[j])
+        for (int j = 1; j <=9; j++)
+        {   
+            if (b[0]>b[j])
             {   
-                temp=b[i];
-                b[i]=b[j];
+                temp=b[0];
+                b[0]=b[j];
                 b[j]=temp;
             }
         }
-    }
     
 }
 void input(int b[]){
