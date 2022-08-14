@@ -20,6 +20,7 @@ int main()
                   {3, 4, 7}};
     int c[3][3];
     ProductMatrix(a, b, c, 3);
+    printf("Product is: \n");
     printTwoDArray(c, 3);
     return 0;
 }
@@ -32,7 +33,7 @@ void ProductMatrix(int a[][m], int b[][m], int c[][m], int n)
         {
             sum = 0;
             for (int k = 0; k < m; k++){
-                sum = sum + (a[i][j] * b[k][j]);
+                sum = sum + (a[i][k] * b[k][j]);
             }
             c[i][j] = sum;
         }
