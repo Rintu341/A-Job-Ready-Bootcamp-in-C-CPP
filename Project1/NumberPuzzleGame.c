@@ -129,10 +129,8 @@ int main()
 }
 void randgen(int a[][4])
 {
-    int hash[17];
+    int hash[17]={0};
     int i, j, temp;
-    for (int k = 0; k < 17; k++) // fill zero in all index
-        hash[k] = 0;
     srand(time(NULL));
     for (i = 0; i < 4; i++)
     {
