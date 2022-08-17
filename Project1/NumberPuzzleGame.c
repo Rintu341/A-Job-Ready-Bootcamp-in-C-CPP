@@ -53,7 +53,7 @@ void Rule()
     Blue();
     printf("\n                           A. RULE OF THIS GAME\n");
     yellow();
-    printf("        1.You can move only 1 step at a time by given key\n");
+    printf("        1.You can move only 1 step at a time by Arrow key\n");
     printf("            Move Up   : by Up key\n");
     printf("            Move Down : by Down key\n");
     printf("            Move Left : by Left key\n");
