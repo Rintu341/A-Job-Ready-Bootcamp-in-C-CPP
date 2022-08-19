@@ -233,7 +233,7 @@ int checksort(int a[][4])
     int i, j, temp = a[0][0], pre;
     for (i = 0; i < 4; i++)
     {
-        for (j = 0; j < 3; j++)
+        for (j = 0; j < 4; j++)
         {
             pre = a[i][j + 1];
             if (temp > pre)
