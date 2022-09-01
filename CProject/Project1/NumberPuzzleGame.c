@@ -127,7 +127,7 @@ int main()
     printf("\e[1;1H\e[2J");
     return 0;
 }
-void randgen(int a[][4])
+void randgen(int a[][4])//random number generate
 {
     int hash[17]={0};
     int i, j, temp;
