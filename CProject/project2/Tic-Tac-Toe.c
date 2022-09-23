@@ -115,7 +115,6 @@ int input(char str[])
         else
         {
             printf("Space already Occupied\n");
-            continue;
         }
     }
 }
@@ -276,15 +275,16 @@ int PlayWithComputer(char matrix[][3]) // another section for Playwith computer 
         printf("Computer's turn \n");
         system("cls");
         display(matrix);
-        if (temp <= 2)
-        { // This is for random number genarate only one time
-            srand(time(NULL));
-            y = rand() % 10;
-            while (!(hash(y)))
-                y = rand() % 10;
-            PutXO(matrix, y + 48, 0);
-        }
-        else if (Horizontal_checking(matrix, &Q, 'O') || Vertical_checking(matrix, &Q, 'O') || Digonal_checking(matrix, &Q, 'O'))
+        // if (temp <= 2)
+        // { // This is for random number genarate only one time
+        //     srand(time(NULL));
+        //     y = rand() % 10;
+        //     while (!(hash(y)))
+        //         y = rand() % 10;
+        //     PutXO(matrix, y + 48, 0);
+        // }
+        // else 
+        if (Horizontal_checking(matrix, &Q, 'O') || Vertical_checking(matrix, &Q, 'O') || Digonal_checking(matrix, &Q, 'O'))
         {
             PutXO(matrix, Q, 0);
         }
@@ -419,7 +419,7 @@ int PlayWithEvilComputer(char matrix[][3])
     printf("Opponent Turn(0)\n");
     display(matrix);
 
-    int x, y;
+    int x, y,H,V,D;
     for (temp = 0; temp < 9; temp++)
     {
 
@@ -441,25 +441,23 @@ int PlayWithEvilComputer(char matrix[][3])
         printf("Computer's turn \n");
         system("cls");
         display(matrix);
-        if (temp <=3)
-        { // This is for random number genarate only one time
+        if (Horizontal_checking(matrix, &Q, 'O') || Vertical_checking(matrix, &Q, 'O') || Digonal_checking(matrix, &Q, 'O'))
+        {
+            PutXO(matrix, Q, 0);
+        }else if((H=Horizontal_checking(matrix, &Q, 'X'))||(V=Vertical_checking(matrix, &Q, 'X'))||(D=Digonal_checking(matrix, &Q, 'X'))){
+            if (Horizontal_checking(matrix, &Q, 'X'))
+                PutXO(matrix, Q, 0);
+            if (Vertical_checking(matrix, &Q, 'X'))
+                PutXO(matrix, Q, 0);
+            if (Digonal_checking(matrix, &Q, 'X'))
+                PutXO(matrix, Q, 0);
+        }else{
             srand(time(NULL));
             y = rand() % 10;
             while (!(hash(y)))
                 y = rand() % 10;
             PutXO(matrix, y + 48, 0);
         }
-        else if (Horizontal_checking(matrix, &Q, 'O') || Vertical_checking(matrix, &Q, 'O') || Digonal_checking(matrix, &Q, 'O'))
-        {
-            PutXO(matrix, Q, 0);
-        }
-
-        if (Horizontal_checking(matrix, &Q, 'X'))
-            PutXO(matrix, Q, 0);
-        if (Vertical_checking(matrix, &Q, 'X'))
-            PutXO(matrix, Q, 0);
-        if (Digonal_checking(matrix, &Q, 'X'))
-            PutXO(matrix, Q, 0);
         system("cls");
         display(matrix);
         if (horizontal(matrix, 'O') || vertical(matrix, 'O') || diagonals(matrix, 'O'))
