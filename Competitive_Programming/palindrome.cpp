@@ -3,7 +3,7 @@ using namespace std;
 class Solution {
 public:
     bool isPalindrome(int x) {
-            int y=x,rev=0;
+            long  y=x,rev=0;
         if(0>x)
             return false;
         else{
@@ -21,9 +21,9 @@ public:
 int main(){
     Solution s1;
     if(s1.isPalindrome(1000000001))
-        cout<<"Hello";
+        cout<<"True";
     else
-        cout<<"gandu";
+        cout<<"False";
 
     return 0;
 }
